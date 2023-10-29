@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
         HomePage.routeName: (_) => HomePage(),
       },
       initialRoute: HomePage.routeName,
-      title: 'Movie',
+
+      title: 'Movies',
       theme: MyThemeData.Themes,
     );
   }
