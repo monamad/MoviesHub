@@ -11,7 +11,7 @@ enum Page {
   watchlist,
 }
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatefulWidget{
   static String routeName = "Homepage";
 
   @override
