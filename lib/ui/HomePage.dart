@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/Home_fragment/home_view.dart';
 import 'package:movies_app/ui/browse/Browse.dart';
-import 'package:movies_app/ui/home/Home.dart';
 import 'package:movies_app/ui/search/Search.dart';
 import 'package:movies_app/ui/watchList/WatchList.dart';
 
@@ -11,7 +11,7 @@ enum Page {
   watchlist,
 }
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatefulWidget{
   static String routeName = "Homepage";
 
   @override
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildPage(Page page) {
     switch (page) {
       case Page.home:
-        return Home();
+        return HomeTab();
       case Page.search:
         return Search();
       case Page.browse:
