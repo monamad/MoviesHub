@@ -13,7 +13,7 @@ static Future<MoviesModel> getPopularMovies() async{
   return popularMoviesModel;
 }
 
-  static Future<MoviesModel> getNewReleasesMovies() async{
+  static Future<MoviesModel> getNewReleasesMovies()async{
     try{
       var response = await http.get(Uri.parse('$baseUrl/3/movie/upcoming?api_key=$apiKey&language=en-US'));
       var json = jsonDecode(response.body);
