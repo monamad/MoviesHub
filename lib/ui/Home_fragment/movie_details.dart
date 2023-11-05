@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/Home_fragment/recommended_section/recommended_widget.dart';
-import 'package:movies_app/api/api_manager.dart';
-import 'package:movies_app/database_utils/database_utils.dart';
-import 'package:movies_app/models/movie_model.dart';
+import 'package:movies_app/data/api/api_manager.dart';
+import 'package:movies_app/data/database_utils/database_utils.dart';
+import 'package:movies_app/data/models/movie_model.dart';
+import 'package:movies_app/ui/Home_fragment/recommended_section/recommended_widget.dart';
 
 
 class MovieDetails extends StatefulWidget {

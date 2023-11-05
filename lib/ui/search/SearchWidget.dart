@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/Home_fragment/movie_details.dart';
-import 'package:movies_app/models/movie_model.dart';
+import 'package:movies_app/data/models/movie_model.dart';
+import 'package:movies_app/ui/Home_fragment/movie_details.dart';
+
 
 import '../../api_constant.dart';
 

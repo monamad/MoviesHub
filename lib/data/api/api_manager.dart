@@ -1,6 +1,7 @@
 import 'dart:convert';
-import 'package:movies_app/models/category_model.dart';
-import 'package:movies_app/models/movie_model.dart';
+import 'package:movies_app/data/models/category_model.dart';
+import 'package:movies_app/data/models/movie_model.dart';
+
 import 'package:http/http.dart' as http;
 
 class ApiManager {
@@ -9,7 +10,7 @@ class ApiManager {
 
   static Future<MoviesModel> getPopularMovies() async {
     var response =
-        await http.get(Uri.parse('$baseUrl/3/movie/popular?api_key=$apiKey'));
+    await http.get(Uri.parse('$baseUrl/3/movie/popular?api_key=$apiKey'));
     var json = jsonDecode(response.body);
     MoviesModel popularMoviesModel = MoviesModel.fromJson(json);
     return popularMoviesModel;

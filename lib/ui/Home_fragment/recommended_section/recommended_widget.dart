@@ -1,22 +1,33 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/Home_fragment/upcomming_section/movie_widget_upcoming.dart';
-import 'package:movies_app/models/movie_model.dart';
+import 'package:movies_app/data/models/movie_model.dart';
+import 'package:movies_app/ui/Home_fragment/recommended_section/movie_widget_recommended.dart';
 
 
-class UpcommingWidget extends StatefulWidget {
- List<Movie> movies;
 
-  UpcommingWidget(this.movies);
+class RecommendedWidget extends StatefulWidget {
+  List<Movie> movies;
+  String sectionName;
+
+
+  RecommendedWidget(this.movies,this.sectionName);
 
   @override
-  State<UpcommingWidget> createState() => _UpcommingWidgetState();
+  State<RecommendedWidget> createState() => _RecommendedWidgetState();
 }
 
-class _UpcommingWidgetState extends State<UpcommingWidget> {
+class _RecommendedWidgetState extends State<RecommendedWidget> {
+   bool bookmark = false ;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       margin: EdgeInsets.only(top: 30),
       color: Color.fromARGB(255, 40, 42, 40),
@@ -25,7 +36,7 @@ class _UpcommingWidgetState extends State<UpcommingWidget> {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text('New Releases',
+            child: Text('${widget.sectionName}',
               style: TextStyle(color: Colors.white, fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -35,13 +46,13 @@ class _UpcommingWidgetState extends State<UpcommingWidget> {
             options: CarouselOptions(
               enableInfiniteScroll: true,
               disableCenter: false,
-              height: MediaQuery.of(context).size.height * 0.35,
-              viewportFraction: 0.4,
+              height: MediaQuery.of(context).size.height * 0.45,
+              viewportFraction: 0.5,
             ),
-            items: widget.movies.map((mov){
+            items: widget.movies.map((movie) {
               return Builder(
                 builder: (BuildContext context) {
-                  return MovieUpcommingWidget(mov);
+                    return MovieWidget(movie);
                 },
               );
             }).toList(),

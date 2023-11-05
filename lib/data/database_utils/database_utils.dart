@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:movies_app/models/movie_model.dart';
+import 'package:movies_app/data/models/movie_model.dart';
 
 class DatabaseUtils {
   static CollectionReference<Movie> getMoviesCollection() {

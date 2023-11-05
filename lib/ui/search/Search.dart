@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/api/api_manager.dart';
-import 'package:movies_app/models/movie_model.dart';
+import 'package:movies_app/data/api/api_manager.dart';
+import 'package:movies_app/data/models/movie_model.dart';
+
 import '../myThemeData/MyThemeData.dart';
 import 'SearchWidget.dart';
 
