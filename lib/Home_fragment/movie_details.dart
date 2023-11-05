@@ -42,7 +42,7 @@ bool f = true;
           ),
         ),
         iconTheme: IconThemeData(
-          color: Colors.white,
+          color: Theme.of(context).primaryColor,
           size: 28
         ),
       ),
