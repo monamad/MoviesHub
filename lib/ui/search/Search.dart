@@ -75,7 +75,7 @@ late Movie movie;
         ),
       ),
       body: Column(
-        children: [
+        children:[
           FutureBuilder<MoviesModel>(
             future: ApiManager.getSearchMovies(query),
             builder: (context, snapshot) {
