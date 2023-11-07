@@ -17,7 +17,7 @@ static const String routeName = 'MovieDetails';
 class _MovieDetailsState extends State<MovieDetails> {
 String img = 'https://image.tmdb.org/t/p/w500';
 int isSelected = 0;
-bool f = true;
+bool check = true;
 @override
   void initState() {
     // TODO: implement initState
@@ -28,9 +28,9 @@ bool f = true;
   @override
   Widget build(BuildContext context) {
     Movie args = ModalRoute.of(context)!.settings.arguments as Movie;
-    if(f){
+    if(check){
       checkMovieInFireStore(args);
-      f = false;
+      check = false;
     }
     return Scaffold(
       backgroundColor: Color.fromRGBO(18, 19, 18, 1.0),
