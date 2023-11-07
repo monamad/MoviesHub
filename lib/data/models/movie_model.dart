@@ -1,7 +1,8 @@
 
 
 
-import 'package:movies_app/models/category_model.dart';
+
+import 'package:movies_app/data/models/category_model.dart';
 
 class MoviesModel {
   MoviesModel(

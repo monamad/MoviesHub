@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/Home_fragment/home_view.dart';
+import 'package:movies_app/ui/Home_fragment/home_view.dart';
 import 'package:movies_app/ui/browse/Browse.dart';
 import 'package:movies_app/ui/search/Search.dart';
 import 'package:movies_app/ui/watchList/WatchList.dart';

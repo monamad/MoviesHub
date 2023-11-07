@@ -1,9 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/Home_fragment/popular_section/movie_widget_popular.dart';
-import 'package:movies_app/models/movie_model.dart';
+import 'package:movies_app/data/models/movie_model.dart';
 
-
+import 'package:movies_app/ui/Home_fragment/popular_section/movie_widget_popular.dart';
 
 class PopularWidget extends StatefulWidget {
   List<Movie> movies;
@@ -15,8 +14,6 @@ class PopularWidget extends StatefulWidget {
 }
 
 class _PopularWidgetState extends State<PopularWidget> {
-
-
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(

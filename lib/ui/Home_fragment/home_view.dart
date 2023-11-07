@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/Home_fragment/popular_section/popular_widget.dart';
-import 'package:movies_app/Home_fragment/recommended_section/recommended_widget.dart';
-import 'package:movies_app/Home_fragment/upcomming_section/upcomming_widget.dart';
-import 'package:movies_app/api/api_manager.dart';
-import 'package:movies_app/models/movie_model.dart';
+
+import 'package:movies_app/data/api/api_manager.dart';
+import 'package:movies_app/data/models/movie_model.dart';
+import 'package:movies_app/ui/Home_fragment/popular_section/popular_widget.dart';
+import 'package:movies_app/ui/Home_fragment/recommended_section/recommended_widget.dart';
+import 'package:movies_app/ui/Home_fragment/upcomming_section/upcomming_widget.dart';
 
 
 
