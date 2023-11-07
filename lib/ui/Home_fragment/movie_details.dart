@@ -37,13 +37,9 @@ bool check = true;
       appBar: AppBar(
         title: Text('${args.title}',
           style: TextStyle(
-            color: Colors.white,
+
             fontSize: 18,
           ),
-        ),
-        iconTheme: IconThemeData(
-          color: Theme.of(context).primaryColor,
-          size: 28
         ),
       ),
       body: SingleChildScrollView(

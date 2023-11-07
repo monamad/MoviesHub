@@ -10,7 +10,7 @@ class ApiManager {
 
   static Future<MoviesModel> getPopularMovies() async {
     var response =
-    await http.get(Uri.parse('$baseUrl/3/movie/popular?api_key=$apiKey'));
+        await http.get(Uri.parse('$baseUrl/3/movie/popular?api_key=$apiKey'));
     var json = jsonDecode(response.body);
     MoviesModel popularMoviesModel = MoviesModel.fromJson(json);
     return popularMoviesModel;
@@ -68,3 +68,4 @@ class ApiManager {
     return categorylist;
   }
 }
+//https://api.themoviedb.org/3/genre/movie/list
