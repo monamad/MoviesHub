@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:movies_app/firebase_options.dart';
 import 'package:movies_app/ui/HomePage.dart';
 import 'package:movies_app/ui/Home_fragment/movie_details.dart';
+import 'package:movies_app/ui/browse/browseDetails/BrawseDetails.dart';
 import 'package:movies_app/ui/myThemeData/MyThemeData.dart';
 
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         HomePage.routeName: (_) => HomePage(),
         MovieDetails.routeName: (_) => MovieDetails(),
       },
+
       initialRoute: HomePage.routeName,
       title: 'Movie',
       theme: MyThemeData.Themes,

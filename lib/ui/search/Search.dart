@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/data/api/api_manager.dart';
 import 'package:movies_app/data/models/movie_model.dart';
-
 import '../myThemeData/MyThemeData.dart';
 import 'SearchWidget.dart';
 
@@ -12,9 +11,9 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   String query = '';
-late Movie movie;
-  bool movies = false;
+  List<Movie> movies = []; // Change 'movies' to a list
   TextEditingController search = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +21,6 @@ late Movie movie;
         toolbarHeight: 60,
         elevation: 0,
         backgroundColor: MyThemeData.lightprimary,
-        //toolbarHeight: MediaQuery.of(context).size.height*0.1,
         title: TextFormField(
           cursorColor: Colors.white,
           style: TextStyle(
@@ -46,7 +44,7 @@ late Movie movie;
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(17),
               borderSide:
-                  BorderSide(color: Theme.of(context).colorScheme.onSecondary),
+              BorderSide(color: Theme.of(context).colorScheme.onSecondary),
             ),
             prefixIcon: IconButton(
               onPressed: () {},
@@ -83,11 +81,18 @@ late Movie movie;
                 return Center(child: CircularProgressIndicator());
               } else if (snapshot.hasError) {
                 return Text('Error: ${snapshot.error}');
+              } else if (snapshot.hasData) {
+                movies = snapshot.data?.results ?? [];
+                movies.sort((a, b) => (a.originalTitle ?? "").compareTo(b.originalTitle ?? "")); // Sort movies by title
+                // Sort movies by title
+
+                return SearchWidget(
+                  movies: movies, // Pass the sorted movies
+                  query: query,
+                );
+              } else {
+                return Text('No results found.');
               }
-              return SearchWidget(
-                movies: snapshot.data?.results,
-                query: query, 
-              );
             },
           ),
         ],

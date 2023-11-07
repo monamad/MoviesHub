@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class MyThemeData{
@@ -9,7 +11,16 @@ class MyThemeData{
 
 
   static ThemeData Themes = ThemeData(
-
+    appBarTheme: const AppBarTheme(
+      backgroundColor: secondaryprimary,
+      iconTheme: IconThemeData(
+        color: Colors.white,
+        size: 30
+      ),
+      centerTitle: true,
+      titleSpacing: 2,
+      titleTextStyle: TextStyle(color: Colors.white)
+    ),
     scaffoldBackgroundColor: lightprimary,
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: secondaryprimary, // Set the background color here
@@ -18,6 +29,7 @@ class MyThemeData{
       selectedIconTheme: IconThemeData(size: 32, color: selectedItemColor),
     ),
     colorScheme: ColorScheme.fromSeed(
+      background:lightprimary ,
       seedColor: Colors.black,
       primary: secondaryprimarycontainer,
       secondary: secondaryprimary,

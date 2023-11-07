@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/data/database_utils/database_utils.dart';
 import 'package:movies_app/data/models/movie_model.dart';
+import 'package:movies_app/ui/Home_fragment/movie_details.dart';
 
 class MovieUpcommingWidget extends StatefulWidget {
   Movie mov;
@@ -27,24 +28,30 @@ class _MovieUpcommingWidgetState extends State<MovieUpcommingWidget> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Card(
-          clipBehavior: Clip.antiAlias,
-          shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(4)),
-          elevation: 5,
-          child: CachedNetworkImage(
-            imageUrl: "$img${widget.mov.posterPath}",
-            imageBuilder: (context, imageProvider) => Container(
-              height: MediaQuery.of(context).size.height * 0.30,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: imageProvider,
-                  fit: BoxFit.cover,
+        InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, MovieDetails.routeName,arguments: widget.mov );
+
+          },
+          child: Card(
+            clipBehavior: Clip.antiAlias,
+            shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(4)),
+            elevation: 5,
+            child: CachedNetworkImage(
+              imageUrl: "$img${widget.mov.posterPath}",
+              imageBuilder: (context, imageProvider) => Container(
+                height: MediaQuery.of(context).size.height * 0.30,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: imageProvider,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
+              placeholder: (context, url) => CircularProgressIndicator(),
+              errorWidget: (context, url, error) => Center(child: Icon(Icons.error,color: Colors.red,size: 42,)),
             ),
-            placeholder: (context, url) => CircularProgressIndicator(),
-            errorWidget: (context, url, error) => Center(child: Icon(Icons.error,color: Colors.red,size: 42,)),
           ),
         ),
 

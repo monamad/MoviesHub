@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/data/database_utils/database_utils.dart';
 import 'package:movies_app/data/models/movie_model.dart';
+import 'package:movies_app/ui/Home_fragment/movie_details.dart';
 
 class MovieWidget extends StatefulWidget {
   Movie movie;
@@ -38,20 +39,26 @@ class _MovieWidgetState extends State<MovieWidget> {
         children: [
           Stack(
             children: [
-              CachedNetworkImage(
-                imageUrl: "$img${widget.movie.posterPath}",
-                imageBuilder: (context, imageProvider) => Container(
-                  height: MediaQuery.of(context).size.height * 0.30,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: imageProvider,
-                      fit: BoxFit.cover,
+              InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, MovieDetails.routeName,arguments: widget.movie );
+
+                },
+                child: CachedNetworkImage(
+                  imageUrl: "$img${widget.movie.posterPath}",
+                  imageBuilder: (context, imageProvider) => Container(
+                    height: MediaQuery.of(context).size.height * 0.30,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: imageProvider,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
+                  placeholder: (context, url) => CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => Center(child: Icon(Icons.error,color: Colors.red,size: 42,)),
                 ),
-                placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Center(child: Icon(Icons.error,color: Colors.red,size: 42,)),
               ),
 
               Positioned(
