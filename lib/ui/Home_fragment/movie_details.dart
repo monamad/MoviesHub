@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/Home_fragment/recommended_section/recommended_widget.dart';
-import 'package:movies_app/api/api_manager.dart';
-import 'package:movies_app/database_utils/database_utils.dart';
-import 'package:movies_app/models/movie_model.dart';
+import 'package:movies_app/data/api/api_manager.dart';
+import 'package:movies_app/data/database_utils/database_utils.dart';
+import 'package:movies_app/data/models/movie_model.dart';
+import 'package:movies_app/ui/Home_fragment/recommended_section/recommended_widget.dart';
 
 
 class MovieDetails extends StatefulWidget {
@@ -17,7 +17,7 @@ static const String routeName = 'MovieDetails';
 class _MovieDetailsState extends State<MovieDetails> {
 String img = 'https://image.tmdb.org/t/p/w500';
 int isSelected = 0;
-bool f = true;
+bool check = true;
 @override
   void initState() {
     // TODO: implement initState
@@ -28,9 +28,9 @@ bool f = true;
   @override
   Widget build(BuildContext context) {
     Movie args = ModalRoute.of(context)!.settings.arguments as Movie;
-    if(f){
+    if(check){
       checkMovieInFireStore(args);
-      f = false;
+      check = false;
     }
     return Scaffold(
       backgroundColor: Color.fromRGBO(18, 19, 18, 1.0),
@@ -42,7 +42,7 @@ bool f = true;
           ),
         ),
         iconTheme: IconThemeData(
-          color: Colors.white,
+          color: Theme.of(context).primaryColor,
           size: 28
         ),
       ),
