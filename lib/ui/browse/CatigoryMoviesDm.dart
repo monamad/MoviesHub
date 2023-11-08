@@ -11,7 +11,7 @@ class CategoryMovies {
 
   static List<CategoryMovies> getAllCategories() {
     return [
-      CategoryMovies(10759, 'Action', 'Action.png'),
+      CategoryMovies(12, 'Action', 'Action.png'),
       CategoryMovies(10752, 'War', 'War.png'),
 
       CategoryMovies(9648, 'Mystery', 'Mystery.png'),

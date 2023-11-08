@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/ui/browse/CategoryCard.dart'; // Import the CategoryCard widget
-import 'CatigoryMoviesDm.dart'; // Import the CategoryMovies class
+import 'package:movies_app/ui/browse/CategoryCard.dart';
+import 'CatigoryMoviesDm.dart';
 typedef Onclickcategory = void Function(CategoryMovies category);
 
 class Browse extends StatelessWidget {
