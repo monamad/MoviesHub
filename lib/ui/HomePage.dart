@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/Home_fragment/home_view.dart';
+import 'package:movies_app/ui/Home_fragment/home_view.dart';
 import 'package:movies_app/ui/browse/Browse.dart';
 import 'package:movies_app/ui/search/Search.dart';
 import 'package:movies_app/ui/watchList/WatchList.dart';
@@ -11,16 +11,16 @@ enum Page {
   watchlist,
 }
 
-class HomePage extends StatefulWidget{
-  static String routeName = "Homepage";
+class HomePage extends StatefulWidget {
+  static const String routeName = "Homepage";
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
-Page currentPage = Page.home;
-
 class _HomePageState extends State<HomePage> {
+  Page currentPage = Page.home;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,6 +71,8 @@ class _HomePageState extends State<HomePage> {
         return Browse();
       case Page.watchlist:
         return WatchList();
+      default:
+        return HomeTab();
     }
   }
 }
