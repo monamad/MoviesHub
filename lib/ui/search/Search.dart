@@ -72,30 +72,56 @@ class _SearchState extends State<Search> {
           ),
         ),
       ),
-      body: Column(
-        children:[
-          FutureBuilder<MoviesModel>(
-            future: ApiManager.getSearchMovies(query),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator());
-              } else if (snapshot.hasError) {
-                return Text('Error: ${snapshot.error}');
-              } else if (snapshot.hasData) {
-                movies = snapshot.data?.results ?? [];
-                movies.sort((a, b) => (a.originalTitle ?? "").compareTo(b.originalTitle ?? "")); // Sort movies by title
-                // Sort movies by title
-
-                return SearchWidget(
-                  movies: movies, // Pass the sorted movies
-                  query: query,
-                );
-              } else {
-                return Text('No results found.');
-              }
-            },
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FutureBuilder<MoviesModel>(
+              future: ApiManager.getSearchMovies(query),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return CircularProgressIndicator();
+                } else if (snapshot.hasError) {
+                  return AlertDialog(
+                    title: const Text("Error"),
+                    content: Text(
+                      '${snapshot.error}',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 21,
+                      ),
+                    ),
+                    actions: [
+                      ElevatedButton(
+                        onPressed: () async {
+                          ApiManager.getSearchMovies(query);
+                          setState(() {});
+                        },
+                        child: const Text(
+                          "Try Again",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 21,
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                } else if (snapshot.hasData) {
+                  movies = snapshot.data?.results ?? [];
+                  movies.sort((a, b) =>
+                      (a.originalTitle ?? "").compareTo(b.originalTitle ?? ""));
+                  return SearchWidget(
+                    movies: movies,
+                    query: query,
+                  );
+                } else {
+                  return Text('No results found.');
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -47,14 +47,42 @@ class _HomeTabState extends State<HomeTab> {
                     builder: (context, snapShot) {
                       if (snapShot.hasError) {
                         return Center(
-                          child: Text(
-                            '${snapShot.error}',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 21,
-                            ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AlertDialog(
+                                title: const Text("Error"),
+                                content: Text('${snapShot.error}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 21,
+                                  ),
+                                ),
+                                actions: [
+                                  ElevatedButton(
+                                    onPressed: () async {
+                                      _refreshData();
+                                      setState(() {});
+                                    },
+                                    child: const Text("Try Again",style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 21,
+                                    ),),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         );
+                        // return Center(
+                        //   child: Text(
+                        //     '${snapShot.error}',
+                        //     style: TextStyle(
+                        //       color: Colors.white,
+                        //       fontSize: 21,
+                        //     ),
+                        //   ),
+                        // );
                       } else if (snapShot.connectionState == ConnectionState.waiting) {
                         return Center(
                           child: CircularProgressIndicator(
@@ -70,14 +98,42 @@ class _HomeTabState extends State<HomeTab> {
                     builder: (context, snapShot) {
                       if (snapShot.hasError) {
                         return Center(
-                          child: Text(
-                            '${snapShot.error}',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 21,
-                            ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AlertDialog(
+                                title: const Text("Error"),
+                                content: Text('${snapShot.error}',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 21,
+                                ),
+                                ),
+                                actions: [
+                                  ElevatedButton(
+                                    onPressed: () async {
+                                      _refreshData();
+                                      setState(() {});
+                                    },
+                                    child: const Text("Try Again",style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 21,
+                                    ),),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         );
+                        // return Center(
+                        //   child: Text(
+                        //     '${snapShot.error}',
+                        //     style: TextStyle(
+                        //       color: Colors.white,
+                        //       fontSize: 21,
+                        //     ),
+                        //   ),
+                        // );
                       } else if (snapShot.connectionState == ConnectionState.waiting) {
                         return Center(
                           child: CircularProgressIndicator(
@@ -93,14 +149,43 @@ class _HomeTabState extends State<HomeTab> {
                     builder: (context, snapShot) {
                       if (snapShot.hasError) {
                         return Center(
-                          child: Text(
-                            '${snapShot.error}',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 21,
-                            ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AlertDialog(
+                                title: const Text("Error"),
+                                content: Text('${snapShot.error}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 21,
+                                  ),
+                                ),
+                                actions: [
+                                  ElevatedButton(
+                                    onPressed: () async {
+                                      _refreshData();
+                                      setState(() {});
+                                    },
+                                    child: const Text("Try Again",style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 21,
+                                    ),),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         );
+                        // return Center(
+                        //   child: Text(
+                        //     '${snapShot.error}',
+                        //     style: TextStyle(
+                        //       color: Colors.white,
+                        //       fontSize: 21,
+                        //     ),
+                        //   ),
+                        // )
+                        ;
                       } else if (snapShot.connectionState == ConnectionState.waiting) {
                         return Center(
                           child: CircularProgressIndicator(
