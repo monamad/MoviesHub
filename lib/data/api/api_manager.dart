@@ -46,7 +46,8 @@ class ApiManager {
 
   static Future<MoviesModel> getCategoryMoviesList(int? categotyId) async {
     var response = await http.get(Uri.parse(
-        '$baseUrl/3/discover/movie?api_key=$apiKey&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=$categotyId&with_watch_monetization_types=flatrate'));
+        '$baseUrl/3/discover/movie?api_key=$apiKey&language=en-US&sort_by=popularity.desc&include_adult='
+            'false&include_video=false&page=1&with_genres=$categotyId&with_watch_monetization_types=flatrate'));
     var json = jsonDecode(response.body);
     MoviesModel categorylist = MoviesModel.fromJson(json);
     return categorylist;

@@ -182,12 +182,33 @@ bool check = true;
                 future: ApiManager.getSimilarMovies(args.id),
                 builder: (context, snapShot) {
                   if(snapShot.hasError){
-                    return Center(child: Text('${snapShot.error}',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 21,
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AlertDialog(
+                            title: const Text("Error"),
+                            content: Text('${snapShot.error}',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 21,
+                              ),
+                            ),
+                            actions: [
+                              ElevatedButton(
+                                onPressed: () async {
+                                  ApiManager.getSimilarMovies(args.id);
+                                  setState(() {});
+                                },
+                                child: const Text("Try Again",style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 21,
+                                ),),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    ),
                     );
                   }
                   else if (snapShot.connectionState == ConnectionState.waiting){
