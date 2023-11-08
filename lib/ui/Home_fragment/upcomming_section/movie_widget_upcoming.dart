@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/data/database_utils/database_utils.dart';
 import 'package:movies_app/data/models/movie_model.dart';
-import 'package:movies_app/ui/Home_fragment/movie_details.dart';
+import 'package:movies_app/ui/movie_details.dart';
 
 class MovieUpcommingWidget extends StatefulWidget {
   Movie mov;

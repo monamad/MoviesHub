@@ -1,10 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/firebase_options.dart';
+import 'package:movies_app/data/database_utils/firebase_options.dart';
 import 'package:movies_app/ui/HomePage.dart';
-import 'package:movies_app/ui/Home_fragment/movie_details.dart';
-import 'package:movies_app/ui/browse/browseDetails/BrawseDetails.dart';
-import 'package:movies_app/ui/myThemeData/MyThemeData.dart';
+import 'package:movies_app/ui/movie_details.dart';
+import 'package:movies_app/myThemeData/MyThemeData.dart';
+
 
 
 void main() async{

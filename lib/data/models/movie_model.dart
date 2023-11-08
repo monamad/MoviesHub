@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:movies_app/data/models/category_model.dart';
 
 class MoviesModel {
@@ -47,9 +43,6 @@ class MoviesModel {
     return map;
   }
 }
-
-
-
 class Movie {
   Movie({
     this.DataBaseId,
@@ -283,15 +276,6 @@ class ProductionCompanies {
   }
 
 }
-
-/// id : 16
-/// name : "Animation"
-
-/// id : 94602
-/// name : "Puss in Boots Collection"
-/// poster_path : "/anHwj9IupRoRZZ98WTBvHpTiE6A.jpg"
-/// backdrop_path : "/feU1DWV5zMWxXUHJyAIk3dHRQ9c.jpg"
-
 class BelongsToCollection {
   BelongsToCollection({
     this.id,

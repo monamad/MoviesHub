@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/data/database_utils/database_utils.dart';
 import 'package:movies_app/data/models/movie_model.dart';
-import 'package:movies_app/ui/myThemeData/MyThemeData.dart';
+import 'package:movies_app/myThemeData/MyThemeData.dart';
 import 'package:movies_app/ui/watchList/WatchListItems.dart';
 
 class WatchList extends StatefulWidget {

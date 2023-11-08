@@ -5,26 +5,19 @@ import 'package:movies_app/data/api/api_manager.dart';
 import 'package:movies_app/data/database_utils/database_utils.dart';
 import 'package:movies_app/data/models/movie_model.dart';
 import 'package:movies_app/ui/Home_fragment/recommended_section/recommended_widget.dart';
-
-
 class MovieDetails extends StatefulWidget {
 static const String routeName = 'MovieDetails';
-
   @override
   State<MovieDetails> createState() => _MovieDetailsState();
 }
-
 class _MovieDetailsState extends State<MovieDetails> {
 String img = 'https://image.tmdb.org/t/p/w500';
 int isSelected = 0;
 bool check = true;
 @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-
   }
-
   @override
   Widget build(BuildContext context) {
     Movie args = ModalRoute.of(context)!.settings.arguments as Movie;
@@ -37,7 +30,6 @@ bool check = true;
       appBar: AppBar(
         title: Text('${args.title}',
           style: TextStyle(
-
             fontSize: 18,
           ),
         ),
@@ -72,7 +64,6 @@ bool check = true;
                 ],
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.all(14.0),
               child: Text(

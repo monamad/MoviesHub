@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/api_constant.dart';
+import 'package:movies_app/data/api/api_constant.dart';
 import 'package:movies_app/data/database_utils/database_utils.dart';
 import 'package:movies_app/data/models/movie_model.dart';
-import 'package:movies_app/ui/Home_fragment/movie_details.dart';
+import 'package:movies_app/ui/movie_details.dart';
 
 class WatchListItems extends StatefulWidget {
   Movie movie;

@@ -6,7 +6,7 @@ import 'package:movies_app/data/models/movie_model.dart';
 
 import 'package:movies_app/ui/browse/CatigoryMoviesDm.dart';
 
-import '../../../api_constant.dart'; // Replace with your actual import
+import '../../../data/api/api_constant.dart'; // Replace with your actual import
 
 class BrawseDetails extends StatefulWidget {
   final CategoryMovies categoryMovies;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:movies_app/data/api/api_manager.dart';
 import 'package:movies_app/data/database_utils/database_utils.dart';
 import 'package:movies_app/data/models/movie_model.dart';
-import 'package:movies_app/ui/Home_fragment/movie_details.dart';
+import 'package:movies_app/ui/movie_details.dart';
 import 'package:movies_app/ui/browse/CatigoryMoviesDm.dart';
 
 class MovieWidget extends StatefulWidget {
