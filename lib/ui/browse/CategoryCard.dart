@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/ui/browse/CatigoryMoviesDm.dart';
-import 'package:movies_app/ui/browse/browseDetails/BrawseDetails.dart';
+import 'package:movies_app/ui/browse/browseDetails/BrowseDetails.dart';
 
 class CategoryCard extends StatelessWidget {
   final CategoryMovies categoryMovies;
@@ -14,7 +14,7 @@ class CategoryCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BrawseDetails(categoryMovies: categoryMovies,),
+            builder: (context) => BrowseDetails(categoryMovies: categoryMovies,),
           ),
         );
       },

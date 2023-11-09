@@ -5,21 +5,22 @@ import 'package:movies_app/data/api/api_manager.dart';
 import 'package:movies_app/data/models/movie_model.dart';
 
 import 'package:movies_app/ui/browse/CatigoryMoviesDm.dart';
+import 'package:movies_app/ui/movie_details.dart';
 
 import '../../../data/api/api_constant.dart'; // Replace with your actual import
 
-class BrawseDetails extends StatefulWidget {
+class BrowseDetails extends StatefulWidget {
   final CategoryMovies categoryMovies;
 
-  BrawseDetails({required this.categoryMovies});
+  BrowseDetails({required this.categoryMovies});
 
   @override
-  _BrawseDetailsState createState() => _BrawseDetailsState();
+  _BrowseDetailsState createState() => _BrowseDetailsState();
 }
 
 
 
-class _BrawseDetailsState extends State<BrawseDetails> {
+class _BrowseDetailsState extends State<BrowseDetails> {
   List<Movie> movies = [];
   bool isLoading = true;
 
@@ -94,32 +95,37 @@ class _BrawseDetailsState extends State<BrawseDetails> {
         ),
         itemBuilder: (BuildContext context, int index, int realIndex) {
           final movie = movies[index];
-          return Container(
-            child: Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
-                  child: CachedNetworkImage(
-                    imageUrl: '$img${movie.backdropPath ?? ""}',
-                    imageBuilder: (context, imageProvider) => Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: imageProvider,
-                          fit: BoxFit.cover,
+          return InkWell(
+            onTap: (){
+              Navigator.pushNamed(context, MovieDetails.routeName,arguments: movie );
+            },
+            child: Container(
+              child: Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10.0),
+                    child: CachedNetworkImage(
+                      imageUrl: '$img${movie.backdropPath ?? ""}',
+                      imageBuilder: (context, imageProvider) => Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: imageProvider,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                    placeholder: (context, url) => CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => Center(
-                      child: Icon(Icons.error, color: Colors.red, size: 42),
+                      placeholder: (context, url) => CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => Center(
+                        child: Icon(Icons.error, color: Colors.red, size: 42),
+                      ),
                     ),
                   ),
-                ),
-                Center(
-                  child: Image.asset('assets/playbutton.png'),
-                ),
-              ],
+                  Center(
+                    child: Image.asset('assets/playbutton.png'),
+                  ),
+                ],
+              ),
             ),
           );
         },
@@ -172,6 +178,9 @@ class _BrawseDetailsState extends State<BrawseDetails> {
                             child: Stack(
                               children: [
                                 InkWell(
+                                  onTap: (){
+                                    Navigator.pushNamed(context, MovieDetails.routeName,arguments: movie );
+                                  },
                                   child: CachedNetworkImage(
                                     imageUrl: "$img${movie.backdropPath ?? ""}",
                                     imageBuilder: (context, imageProvider) => Container(
