@@ -42,7 +42,6 @@ class _MovieWidgetState extends State<MovieWidget> {
               InkWell(
                 onTap: (){
                   Navigator.pushNamed(context, MovieDetails.routeName,arguments: widget.movie );
-
                 },
                 child: CachedNetworkImage(
                   imageUrl: "$img${widget.movie.posterPath}",
